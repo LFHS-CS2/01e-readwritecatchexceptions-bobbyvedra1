@@ -3,3 +3,24 @@ Write code to copy each line from test.in into a new file called test.out.  Use 
 
 When you are able to the "run tests" successfully, see if you can program it in a different way.
 
+import java.io.*;
+import java.util.*;
+class Main {
+    public static void main(String[] args)  {
+      try
+{
+       Scanner in = new Scanner(new File("test.in"));
+       PrintWriter out = new PrintWriter("test.out");
+       while (in.hasNextLine()) {      
+           out.println(in.nextLine());   
+       }  
+        in.close();   
+        out.close();
+}
+catch (Exception e)
+{
+     System.out.println("exception");
+
+}       
+    }
+}
